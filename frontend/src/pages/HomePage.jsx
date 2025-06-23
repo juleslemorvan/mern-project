@@ -33,17 +33,19 @@ const HomePage = () => {
 						<ProductCard key={product._id} product={product} />
 					))}
 				</SimpleGrid>
-        {products.length === 0 && (
-					<Text fontSize='xl' textAlign={"center"} fontWeight='bold' color='gray.500'>
-						No products found 😢{" "}
-						<ChakraLink as={RouterLink} to={"/create"}>
-							
-							<Text as='span' color='blue.500' _hover={{ textDecoration: "underline" }}>
-								Create a product
-							</Text>
-						</ChakraLink>
-					</Text>
-				)}
+       {products.length === 0 && (
+  <Text fontSize='xl' textAlign="center" fontWeight='bold' color='gray.500'>
+    No products found 😢{" "}
+    <ChakraLink
+      as={RouterLink}
+      to="/create"
+      color="blue.500"
+      _hover={{ textDecoration: "underline" }}
+    >
+      Create a product
+    </ChakraLink>
+  </Text>
+)}
       </VStack>
     </Container>
   )
