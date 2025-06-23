@@ -33,19 +33,23 @@ const HomePage = () => {
 						<ProductCard key={product._id} product={product} />
 					))}
 				</SimpleGrid>
-       {products.length === 0 && (
-  <VStack spacing={4}>
-    <Text fontSize='xl' textAlign="center" fontWeight='bold' color='gray.500'>
+    {products.length === 0 && (
+  <VStack spacing={4} textAlign="center">
+    <Text fontSize="2xl" fontWeight="bold" color="gray.600">
       No products found 😢
     </Text>
     <ChakraLink
       as={RouterLink}
       to="/create"
       fontSize="lg"
+      fontWeight="semibold"
       color="blue.500"
-      _hover={{ textDecoration: "underline" }}
+      display="inline-flex"
+      alignItems="center"
+      gap={2}
+      _hover={{ textDecoration: "underline", color: "blue.600" }}
     >
-      ➕ Create a product
+      <span style={{ fontSize: "20px" }}>➕</span> Create a product
     </ChakraLink>
   </VStack>
 )}
