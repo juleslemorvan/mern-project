@@ -9,7 +9,8 @@ dotenv.config();
 
 const app = express();
 
-const __dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 app.use(cors());
 
@@ -20,8 +21,8 @@ app.use("/api/products", productRoutes);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
-  app.get("*", (req, res) =>  {
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+  app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
   });
 }
 
@@ -29,5 +30,3 @@ app.listen(5001, () => {
   connectDB();
   console.log("server démarée au port 5001 ");
 });
-
-//
