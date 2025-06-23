@@ -34,7 +34,7 @@ const HomePage = () => {
 					))}
 				</SimpleGrid>
     {products.length === 0 && (
-  <VStack spacing={4} textAlign="center">
+  <HStack spacing={4} textAlign="center">
     <Text fontSize="2xl" fontWeight="bold" color="gray.600">
       No products found 😢
     </Text>
@@ -42,16 +42,17 @@ const HomePage = () => {
       as={RouterLink}
       to="/create"
       fontSize="lg"
-      fontWeight="semibold"
+      fontWeight="bold"
+	  textdecoration="none"
       color="blue.500"
       display="inline-flex"
       alignItems="center"
       gap={2}
-      _hover={{ textDecoration: "underline", color: "blue.600" }}
+	  _hover={{ scale: 1.1, color: "blue.600" }}
     >
-      <span style={{ fontSize: "20px" }}>➕</span> Create a product
+     Create a product
     </ChakraLink>
-  </VStack>
+  </HStack>
 )}
       </VStack>
     </Container>
