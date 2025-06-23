@@ -1,7 +1,9 @@
-import { Container, SimpleGrid, Text, VStack, Link } from '@chakra-ui/react'
+import { Container, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import { useProductStore } from '../store/product';
 import ProductCard from '../components/ProductCard';
+import { Link as RouterLink } from "react-router-dom";
+import { Link as ChakraLink } from "@chakra-ui/react";
 
 
 const HomePage = () => {
@@ -34,11 +36,12 @@ const HomePage = () => {
         {products.length === 0 && (
 					<Text fontSize='xl' textAlign={"center"} fontWeight='bold' color='gray.500'>
 						No products found 😢{" "}
-						<Link to={"/create"}>
+						<ChakraLink as={RouterLink} to={"/create"}>
+							
 							<Text as='span' color='blue.500' _hover={{ textDecoration: "underline" }}>
 								Create a product
 							</Text>
-						</Link>
+						</ChakraLink>
 					</Text>
 				)}
       </VStack>
