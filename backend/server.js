@@ -4,10 +4,14 @@ import cors from "cors";
 import { connectDB } from "./config/db.js";
 import productRoutes from "./routes/product.route.js";
 import path from "path";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
 const app = express();
+
+const PORT = process.env.PORT || 5001;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -26,7 +30,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(5001, () => {
+app.listen(PORT, () => {
   connectDB();
   console.log("server démarée au port 5001 ");
 });
