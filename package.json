@@ -4,6 +4,7 @@
   "description": "first Mern Project",
   "main": "index.js",
   "scripts": {
+    "start": "node ./backend/server.js",
     "dev": "nodemon ./backend/server.js"
   },
   "type": "module",
