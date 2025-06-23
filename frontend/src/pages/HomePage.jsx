@@ -1,4 +1,4 @@
-import { Container, SimpleGrid, Text, VStack } from '@chakra-ui/react'
+import { Container, HStack, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import { useProductStore } from '../store/product';
 import ProductCard from '../components/ProductCard';
